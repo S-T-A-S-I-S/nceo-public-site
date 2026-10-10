@@ -73,13 +73,6 @@
           </div>
         </div>
         <div class="contact-detail">
-          <div class="icon">🎮</div>
-          <div>
-            <div class="lbl">Discord</div>
-            <div class="val">discord.gg/nceo</div>
-          </div>
-        </div>
-        <div class="contact-detail">
           <div class="icon">📅</div>
           <div>
             <div class="lbl">Response Time</div>
@@ -350,6 +343,65 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<!-- ─── Registration Success Modal ─── -->
+<div id="reg-success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px)">
+  <div style="background:var(--card);border:1px solid rgba(0,212,255,0.3);border-radius:1.25rem;padding:2.5rem 2rem;max-width:460px;width:100%;text-align:center;position:relative">
+    <div style="width:56px;height:56px;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.5rem">✓</div>
+    <h2 id="modal-title" style="font-family:var(--font-orbitron);font-size:1.1rem;margin-bottom:0.75rem">Registration Received</h2>
+    <p style="color:var(--muted);font-size:0.9rem;line-height:1.6;margin-bottom:1.75rem">We'll verify your school and follow up at your .edu email within 48 hours.<br><br>In the meantime, join our Discord to connect with the NCEO community, ask questions, and stay up to date on Season 1.</p>
+    <a href="https://discord.gg/QmwcQ3DDwA" target="_blank" rel="noopener"
+      style="display:inline-flex;align-items:center;gap:0.6rem;background:#5865F2;color:#fff;font-family:var(--font-orbitron);font-size:0.75rem;font-weight:700;letter-spacing:0.06em;padding:0.75rem 1.5rem;border-radius:0.5rem;text-decoration:none;margin-bottom:1rem">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.245 1.175A14.74 14.74 0 0 0 11.52 0c-.18.325-.39.763-.534 1.111a13.613 13.613 0 0 0-4.07 0A11.518 11.518 0 0 0 6.38 0 14.795 14.795 0 0 0 2.65 1.178C.381 4.545-.234 7.827.074 11.063c1.56 1.147 3.073 1.845 4.561 2.3a10.87 10.87 0 0 0 .942-1.534 9.63 9.63 0 0 1-1.483-.712c.124-.09.245-.185.362-.282 2.86 1.322 5.964 1.322 8.788 0 .118.097.24.192.362.282-.473.28-.97.52-1.484.713.27.543.578 1.055.943 1.533 1.49-.454 3.004-1.152 4.563-2.3.374-3.91-.637-7.16-2.383-9.888ZM6.013 9.065c-.88 0-1.601-.81-1.601-1.8 0-.99.706-1.802 1.601-1.802.896 0 1.616.811 1.601 1.801 0 .99-.705 1.801-1.601 1.801Zm5.974 0c-.88 0-1.601-.81-1.601-1.8 0-.99.705-1.802 1.601-1.802.896 0 1.616.811 1.601 1.801 0 .99-.698 1.801-1.601 1.801Z" fill="currentColor"/>
+      </svg>
+      Join the NCEO Discord
+    </a>
+    <br>
+    <button onclick="document.getElementById('reg-success-modal').style.display='none'"
+      style="background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--font-rajdhani);font-size:0.85rem;padding:0.5rem 1.25rem;border-radius:0.5rem;cursor:pointer;margin-top:0.25rem">
+      Close
+    </button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('registration-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (res) {
+      if (res.ok) {
+        form.reset();
+        var modal = document.getElementById('reg-success-modal');
+        modal.style.display = 'flex';
+        modal.focus();
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Submit Registration';
+        alert('Something went wrong. Please try again or email info@nceo.gg');
+      }
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Submit Registration';
+      alert('Something went wrong. Please try again or email info@nceo.gg');
+    });
+  });
+
+  // Close modal on backdrop click
+  document.getElementById('reg-success-modal').addEventListener('click', function (e) {
+    if (e.target === this) this.style.display = 'none';
+  });
+}());
+</script>
 </body>
 </html>
 
