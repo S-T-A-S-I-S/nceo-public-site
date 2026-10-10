@@ -122,7 +122,7 @@
       <!-- Form column -->
       <div class="contact-form-wrap animate-in delay-1">
         <h3>School Registration Form</h3>
-        <form action="mailto:info@nceo.gg" method="POST" enctype="text/plain" id="registration-form">
+        <form action="https://formspree.io/f/myekjdad" method="POST" id="registration-form">
           <div class="form-row">
             <div class="form-group">
               <label for="first-name">First Name *</label>
@@ -219,6 +219,40 @@
         </form>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ─── General Inquiries ─── -->
+<section class="section-sm" style="background:rgba(13,26,48,0.4);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div style="max-width:560px;margin:0 auto">
+      <span class="section-label animate-in">General Inquiries</span>
+      <div class="divider"></div>
+      <h2 class="animate-in delay-1" style="margin-bottom:0.5rem">Have a question?</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:2rem">Not registering yet — just want to learn more or get in touch? Use this form or email us directly at <a href="mailto:info@nceo.gg" style="color:var(--accent)">info@nceo.gg</a>.</p>
+      <form action="https://formspree.io/f/mkjobvaa" method="POST" class="animate-in delay-2">
+        <input type="hidden" name="_subject" value="NCEO General Inquiry" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inq-name">Name *</label>
+            <input type="text" id="inq-name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="inq-email">Email *</label>
+            <input type="email" id="inq-email" name="email" placeholder="you@email.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inq-message">Message *</label>
+          <textarea id="inq-message" name="message" placeholder="What would you like to know?" required></textarea>
+        </div>
+        <input type="text" name="_gotcha" style="display:none" />
+        <button type="submit" class="btn-primary form-submit">
+          Send Message
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
     </div>
   </div>
 </section>
