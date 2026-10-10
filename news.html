@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News & Announcements — NCEO</title>
+  <meta name="description" content="Stay up to date with NCEO news, season announcements, and league updates." />
+  <link rel="icon" href="nceo-logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav class="nav" role="navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="nceo-logo.png" alt="NCEO" />
+        NCEO
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn-primary">Register School</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" role="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-primary">Register School</a>
+  </div>
+</nav>
+
+<!-- ─── Page Hero ─── -->
+<header class="page-hero">
+  <div class="container">
+    <span class="section-label animate-in">Latest Updates</span>
+    <h1 class="animate-in delay-1">News &amp; <span>Announcements</span></h1>
+    <p class="animate-in delay-2">Season updates, match recaps, registration windows, and everything happening across the NCEO.</p>
+  </div>
+</header>
+
+<!-- ─── Featured Post ─── -->
+<section class="section">
+  <div class="container">
+    <div class="news-featured animate-in">
+      <span class="tag">📣 Featured Announcement</span>
+      <h2>Season 3 Is Live — Matches Begin This Week</h2>
+      <p>After a successful registration period with over 40 schools across all 8 conferences, Season 3 of the NCEO is officially underway. Conference schedules have been published in the portal, and the first round of matches begins this week across all 6 titles.</p>
+      <div class="news-featured-meta">
+        <span>🗓 October 10, 2026</span>
+        <span>·</span>
+        <span>🏆 Season 3</span>
+        <span>·</span>
+        <span style="color:var(--accent)">League News</span>
+      </div>
+    </div>
+
+    <!-- Filter pills -->
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem">
+      <button class="btn-primary" style="font-size:0.65rem;padding:0.4rem 0.9rem" onclick="filterNews('all', this)">All</button>
+      <button class="btn-outline" style="font-size:0.65rem;padding:0.4rem 0.9rem" onclick="filterNews('season', this)">Season</button>
+      <button class="btn-outline" style="font-size:0.65rem;padding:0.4rem 0.9rem" onclick="filterNews('title', this)">Titles</button>
+      <button class="btn-outline" style="font-size:0.65rem;padding:0.4rem 0.9rem" onclick="filterNews('community', this)">Community</button>
+    </div>
+
+    <div class="news-grid">
+
+      <article class="news-card animate-in" data-category="season">
+        <div class="news-card-img" style="background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(13,26,48,0.8))">🏆</div>
+        <div class="news-card-body">
+          <span class="news-card-tag">Season News</span>
+          <h3>Season 3 Conference Schedules Now Published</h3>
+          <p>All 8 conference schedules are now live in the portal. Log in to view your school's upcoming matches and opponent rosters.</p>
+          <div class="news-card-footer">
+            <span>Oct 10, 2026</span>
+            <span style="color:var(--accent);font-family:var(--font-orbitron);font-size:0.65rem">READ →</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-card animate-in delay-1" data-category="title">
+        <div class="news-card-img" style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(13,26,48,0.8))">🚀</div>
+        <div class="news-card-body">
+          <span class="news-card-tag" style="color:#3B82F6">Rocket League</span>
+          <h3>RL Season 3 Format Updates: New Overtime Rules</h3>
+          <p>Starting this season, Rocket League matches will use 3-minute unlimited overtime in place of the previous sudden-death format.</p>
+          <div class="news-card-footer">
+            <span>Oct 5, 2026</span>
+            <span style="color:var(--accent);font-family:var(--font-orbitron);font-size:0.65rem">READ →</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-card animate-in delay-2" data-category="season">
+        <div class="news-card-img" style="background:linear-gradient(135deg,rgba(0,255,136,0.15),rgba(13,26,48,0.8))">🎓</div>
+        <div class="news-card-body">
+          <span class="news-card-tag">Registration</span>
+          <h3>Season 3 Registration Closed — 42 Schools Confirmed</h3>
+          <p>Registration for Season 3 has officially closed with 42 schools confirmed across all conferences. Season 4 registration opens in January.</p>
+          <div class="news-card-footer">
+            <span>Sep 28, 2026</span>
+            <span style="color:var(--accent);font-family:var(--font-orbitron);font-size:0.65rem">READ →</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-card animate-in" data-category="title">
+        <div class="news-card-img" style="background:linear-gradient(135deg,rgba(168,85,247,0.2),rgba(13,26,48,0.8))">⚔️</div>
+        <div class="news-card-body">
+          <span class="news-card-tag" style="color:#A855F7">Super Smash Bros</span>
+          <h3>SSB Ruleset Updated: Stage List &amp; Character Restrictions</h3>
+          <p>The NCEO Super Smash Bros ruleset has been updated for Season 3. Updated stage list and new character restriction guidelines now apply.</p>
+          <div class="news-card-footer">
+            <span>Sep 20, 2026</span>
+            <span style="color:var(--accent);font-family:var(--font-orbitron);font-size:0.65rem">READ →</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-card animate-in delay-1" data-category="community">
+        <div class="news-card-img" style="background:linear-gradient(135deg,rgba(249,115,22,0.2),rgba(13,26,48,0.8))">🌐</div>
+        <div class="news-card-body">
+          <span class="news-card-tag" style="color:#F97316">Community</span>
+          <h3>NCEO Discord Server Hits 500 Members</h3>
+          <p>Our Discord community crossed 500 members this week. Join the server to coordinate with other schools, get match reminders, and follow live updates.</p>
+          <div class="news-card-footer">
+            <span>Sep 15, 2026</span>
+            <span style="color:var(--accent);font-family:var(--font-orbitron);font-size:0.65rem">READ →</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-card animate-in delay-2" data-category="season">
+        <div class="news-card-img" style="background:linear-gradient(135deg,rgba(0,212,255,0.1),rgba(13,26,48,0.8))">📋</div>
+        <div class="news-card-body">
+          <span class="news-card-tag">Season Recap</span>
+          <h3>Season 2 Championship Recap: Full Results &amp; Highlights</h3>
+          <p>Season 2 wrapped up with a clean sweep from the East Conference in Rocket League. Full results, VODs, and standings breakdown now available.</p>
+          <div class="news-card-footer">
+            <span>Jun 1, 2026</span>
+            <span style="color:var(--accent);font-family:var(--font-orbitron);font-size:0.65rem">READ →</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-card animate-in" data-category="title">
+        <div class="news-card-img" style="background:linear-gradient(135deg,rgba(220,38,38,0.2),rgba(13,26,48,0.8))">🎯</div>
+        <div class="news-card-body">
+          <span class="news-card-tag" style="color:#DC2626">Rainbow Six Siege</span>
+          <h3>R6 Added as Official NCEO Title for Season 3</h3>
+          <p>Rainbow Six Siege joins the NCEO lineup in Season 3 as our 6th supported title. Schools can now register R6 rosters through the portal.</p>
+          <div class="news-card-footer">
+            <span>May 20, 2026</span>
+            <span style="color:var(--accent);font-family:var(--font-orbitron);font-size:0.65rem">READ →</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-card animate-in delay-1" data-category="community">
+        <div class="news-card-img" style="background:linear-gradient(135deg,rgba(0,255,136,0.1),rgba(13,26,48,0.8))">🤝</div>
+        <div class="news-card-body">
+          <span class="news-card-tag" style="color:#00FF88">Community</span>
+          <h3>NCEO Ambassadors Program Now Open</h3>
+          <p>We're launching a student ambassador program to help grow esports at more campuses. Apply to become an NCEO ambassador at your school.</p>
+          <div class="news-card-footer">
+            <span>May 10, 2026</span>
+            <span style="color:var(--accent);font-family:var(--font-orbitron);font-size:0.65rem">READ →</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-card animate-in delay-2" data-category="season">
+        <div class="news-card-img" style="background:linear-gradient(135deg,rgba(14,165,233,0.15),rgba(13,26,48,0.8))">🗓</div>
+        <div class="news-card-body">
+          <span class="news-card-tag">Calendar</span>
+          <h3>Season 4 Registration Opens January 2027</h3>
+          <p>Mark your calendars — Season 4 registration opens January 15, 2027. Early registrations receive priority conference seeding.</p>
+          <div class="news-card-footer">
+            <span>Oct 1, 2026</span>
+            <span style="color:var(--accent);font-family:var(--font-orbitron);font-size:0.65rem">READ →</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Newsletter / Stay Updated ─── -->
+<section class="section-sm" style="background:rgba(13,26,48,0.4);border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="cta-banner">
+      <span class="section-label" style="display:block;margin-bottom:0.75rem">Stay In the Loop</span>
+      <h2>Get Season Updates by Email</h2>
+      <p>Subscribe to receive schedule announcements, match results, and season news straight to your inbox.</p>
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto">
+        <input type="hidden" name="_subject" value="NCEO Newsletter Signup" />
+        <input type="email" name="email" placeholder="your@email.com" required
+          style="flex:1;min-width:220px;background:rgba(7,16,31,0.8);border:1px solid var(--border);border-radius:0.5rem;padding:0.75rem 1rem;color:var(--text);font-family:var(--font-rajdhani);font-size:1rem;outline:none;" />
+        <button type="submit" class="btn-primary" style="white-space:nowrap">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-box">N</div>
+          <span>NCEO</span>
+        </div>
+        <p class="footer-tagline">The official collegiate esports organization connecting campuses across the nation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Titles</h4>
+        <ul>
+          <li><a href="games.html">Super Smash Bros</a></li>
+          <li><a href="games.html">Mario Kart</a></li>
+          <li><a href="games.html">Rocket League</a></li>
+          <li><a href="games.html">Fortnite</a></li>
+          <li><a href="games.html">Rainbow Six Siege</a></li>
+          <li><a href="games.html">Overwatch 2</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>League</h4>
+        <ul>
+          <li><a href="about.html">About NCEO</a></li>
+          <li><a href="games.html">Game Titles</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Portal</h4>
+        <ul>
+          <li><a href="#">Sign In</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Standings</a></li>
+          <li><a href="#">Match History</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <script>document.write(new Date().getFullYear())</script> National Collegiate Esports Organization. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Rules</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function filterNews(category, btn) {
+  document.querySelectorAll('[onclick^="filterNews"]').forEach(b => {
+    b.className = b === btn ? 'btn-primary' : 'btn-outline';
+    b.style.fontSize = '0.65rem';
+    b.style.padding = '0.4rem 0.9rem';
+  });
+  document.querySelectorAll('.news-card').forEach(card => {
+    card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

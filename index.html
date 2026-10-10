@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NCEO — National Collegiate Esports Organization</title>
+  <meta name="description" content="Where campus champions are made. Compete across 6 titles, climb your conference standings, and get recruited." />
+  <meta property="og:title" content="NCEO — National Collegiate Esports Organization" />
+  <meta property="og:description" content="Where campus champions are made." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="nceo-logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav class="nav" role="navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="nceo-logo.png" alt="NCEO" />
+        NCEO
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn-primary">Register School</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" role="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-primary">Register School</a>
+  </div>
+</nav>
+
+<!-- ─── Hero ─── -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-glow"></div>
+  <div class="container" style="width:100%">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge animate-in">
+          <div class="dot"></div>
+          <span>Season 3 Now Live</span>
+        </div>
+        <h1 class="hero-title animate-in delay-1" id="hero-title">
+          <span class="line-1">NCEO</span>
+          <span class="line-2">National Collegiate</span>
+          <span class="line-3">Esports Org</span>
+        </h1>
+        <p class="hero-subtitle animate-in delay-2">
+          Where campus champions are made. Compete across <strong>6 titles</strong>,
+          climb your conference standings, and get seen by the broader esports community.
+        </p>
+        <div class="hero-actions animate-in delay-3">
+          <a href="contact.html" class="btn-primary">
+            Register Your School
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="about.html" class="btn-outline">Learn More</a>
+        </div>
+        <div class="hero-meta animate-in delay-4">
+          <div class="hero-meta-item">
+            <svg class="icon" width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Season 3 Finals in March
+          </div>
+          <div class="hero-meta-item">
+            <svg class="icon" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3.5 3.5.5-2.5 2.5.5 3.5L8 10.5 5 12l.5-3.5L3 6l3.5-.5L8 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            Open to all .edu students
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-glow"></div>
+        <div class="game-float-grid">
+          <div class="game-float-card" style="border-color:rgba(168,85,247,0.3)">
+            <img src="logos/ssbu.png" alt="Super Smash Bros" class="game-float-logo" />
+            <div class="game-abbr" style="color:#A855F7">SSB</div>
+            <div class="game-name">Super Smash Bros</div>
+          </div>
+          <div class="game-float-card" style="border-color:rgba(239,68,68,0.3)">
+            <img src="logos/mk.png" alt="Mario Kart" class="game-float-logo" />
+            <div class="game-abbr" style="color:#EF4444">MK</div>
+            <div class="game-name">Mario Kart</div>
+          </div>
+          <div class="game-float-card" style="border-color:rgba(59,130,246,0.3)">
+            <img src="logos/rl.png" alt="Rocket League" class="game-float-logo" />
+            <div class="game-abbr" style="color:#3B82F6">RL</div>
+            <div class="game-name">Rocket League</div>
+          </div>
+          <div class="game-float-card" style="border-color:rgba(20,184,166,0.3)">
+            <img src="logos/fortnite.png" alt="Fortnite" class="game-float-logo" />
+            <div class="game-abbr" style="color:#14B8A6">FN</div>
+            <div class="game-name">Fortnite</div>
+          </div>
+          <div class="game-float-card" style="border-color:rgba(220,38,38,0.3)">
+            <img src="logos/r6.png" alt="Rainbow Six Siege" class="game-float-logo" />
+            <div class="game-abbr" style="color:#DC2626">R6</div>
+            <div class="game-name">Rainbow Six</div>
+          </div>
+          <div class="game-float-card" style="border-color:rgba(249,115,22,0.3)">
+            <img src="logos/ow2.png" alt="Overwatch 2" class="game-float-logo" />
+            <div class="game-abbr" style="color:#F97316">OW2</div>
+            <div class="game-name">Overwatch 2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.35">
+    <div style="width:1px;height:2rem;background:linear-gradient(to bottom,var(--accent),transparent)"></div>
+    <span style="font-family:var(--font-orbitron);font-size:0.6rem;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase">Scroll</span>
+  </div>
+</section>
+
+<!-- ─── Stats Bar ─── -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-value" data-target="42" data-suffix="+">0+</div>
+        <div class="stat-label">Schools</div>
+      </div>
+      <div>
+        <div class="stat-value" data-target="380" data-suffix="+">0+</div>
+        <div class="stat-label">Players</div>
+      </div>
+      <div>
+        <div class="stat-value" data-target="6">0</div>
+        <div class="stat-label">Game Titles</div>
+      </div>
+      <div>
+        <div class="stat-value" data-target="3">0</div>
+        <div class="stat-label">Seasons Completed</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Games Section ─── -->
+<section class="section" id="titles">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label animate-in">Supported Titles</span>
+      <h2 class="animate-in delay-1">Compete Across 6 Games</h2>
+      <p class="animate-in delay-2">Each title runs its own conference schedule with dedicated brackets, standings, and season championships.</p>
+    </div>
+    <div class="games-grid">
+      <div class="game-card animate-in" style="border-color:rgba(168,85,247,0.25);box-shadow:0 0 40px rgba(168,85,247,0.06)">
+        <div class="game-card-top">
+          <div class="game-card-icon" style="background:rgba(168,85,247,0.15)"><img src="logos/ssbu.png" alt="Super Smash Bros" /></div>
+          <div class="game-card-meta">
+            <h3 style="color:#A855F7">Super Smash Bros</h3>
+            <span class="abbr">SSB · Fighting</span>
+          </div>
+        </div>
+        <p>1v1 bracket format with double elimination. Compete in one of collegiate esports' most popular fighting games.</p>
+        <div class="game-card-footer">
+          <span class="format">1v1 · Double Elim</span>
+          <span class="game-badge" style="color:#A855F7;border-color:rgba(168,85,247,0.3)">Season 3</span>
+        </div>
+      </div>
+      <div class="game-card animate-in delay-1" style="border-color:rgba(239,68,68,0.25);box-shadow:0 0 40px rgba(239,68,68,0.06)">
+        <div class="game-card-top">
+          <div class="game-card-icon" style="background:rgba(239,68,68,0.15)"><img src="logos/mk.png" alt="Mario Kart" /></div>
+          <div class="game-card-meta">
+            <h3 style="color:#EF4444">Mario Kart</h3>
+            <span class="abbr">MK · Racing</span>
+          </div>
+        </div>
+        <p>Head-to-head races with custom point systems. One of the most accessible titles for new competitors.</p>
+        <div class="game-card-footer">
+          <span class="format">1v1 · Points</span>
+          <span class="game-badge" style="color:#EF4444;border-color:rgba(239,68,68,0.3)">Season 3</span>
+        </div>
+      </div>
+      <div class="game-card animate-in delay-2" style="border-color:rgba(59,130,246,0.25);box-shadow:0 0 40px rgba(59,130,246,0.06)">
+        <div class="game-card-top">
+          <div class="game-card-icon" style="background:rgba(59,130,246,0.15)"><img src="logos/rl.png" alt="Rocket League" /></div>
+          <div class="game-card-meta">
+            <h3 style="color:#3B82F6">Rocket League</h3>
+            <span class="abbr">RL · Sports</span>
+          </div>
+        </div>
+        <p>Team-based vehicular soccer in a best-of-3 match format. One of the most watched collegiate esports titles.</p>
+        <div class="game-card-footer">
+          <span class="format">3v3 · Bo3</span>
+          <span class="game-badge" style="color:#3B82F6;border-color:rgba(59,130,246,0.3)">Season 3</span>
+        </div>
+      </div>
+      <div class="game-card animate-in" style="border-color:rgba(20,184,166,0.25);box-shadow:0 0 40px rgba(20,184,166,0.06)">
+        <div class="game-card-top">
+          <div class="game-card-icon" style="background:rgba(20,184,166,0.15)"><img src="logos/fortnite.png" alt="Fortnite" /></div>
+          <div class="game-card-meta">
+            <h3 style="color:#14B8A6">Fortnite</h3>
+            <span class="abbr">FN · Battle Royale</span>
+          </div>
+        </div>
+        <p>Solo and duo competitive formats. Build, fight, and outlast opponents in structured tournament play.</p>
+        <div class="game-card-footer">
+          <span class="format">1v1 · Duos</span>
+          <span class="game-badge" style="color:#14B8A6;border-color:rgba(20,184,166,0.3)">Season 3</span>
+        </div>
+      </div>
+      <div class="game-card animate-in delay-1" style="border-color:rgba(220,38,38,0.25);box-shadow:0 0 40px rgba(220,38,38,0.06)">
+        <div class="game-card-top">
+          <div class="game-card-icon" style="background:rgba(220,38,38,0.15)"><img src="logos/r6.png" alt="Rainbow Six Siege" /></div>
+          <div class="game-card-meta">
+            <h3 style="color:#DC2626">Rainbow Six Siege</h3>
+            <span class="abbr">R6 · Tactical FPS</span>
+          </div>
+        </div>
+        <p>5v5 tactical shooter with destructible environments. High strategy and communication define this title.</p>
+        <div class="game-card-footer">
+          <span class="format">5v5 · Bo3</span>
+          <span class="game-badge" style="color:#DC2626;border-color:rgba(220,38,38,0.3)">Season 3</span>
+        </div>
+      </div>
+      <div class="game-card animate-in delay-2" style="border-color:rgba(249,115,22,0.25);box-shadow:0 0 40px rgba(249,115,22,0.06)">
+        <div class="game-card-top">
+          <div class="game-card-icon" style="background:rgba(249,115,22,0.15)"><img src="logos/ow2.png" alt="Overwatch 2" /></div>
+          <div class="game-card-meta">
+            <h3 style="color:#F97316">Overwatch 2</h3>
+            <span class="abbr">OW2 · Team Shooter</span>
+          </div>
+        </div>
+        <p>6v6 hero-based team shooter. Coordinate roles, counter the enemy comp, and dominate objectives.</p>
+        <div class="game-card-footer">
+          <span class="format">5v5 · Bo3</span>
+          <span class="game-badge" style="color:#F97316;border-color:rgba(249,115,22,0.3)">Season 3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── How It Works ─── -->
+<section class="section" id="how-it-works" style="background:rgba(13,26,48,0.4);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label animate-in">Getting Started</span>
+      <h2 class="animate-in delay-1">How It Works</h2>
+      <p class="animate-in delay-2">From signup to season play in three steps.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step animate-in">
+        <div class="step-num">01</div>
+        <h3>Register Your School</h3>
+        <p>Submit your school's info through our contact form. We verify your .edu affiliation and assign your conference.</p>
+      </div>
+      <div class="step animate-in delay-1">
+        <div class="step-num">02</div>
+        <h3>Build Your Roster</h3>
+        <p>Invite players from your campus. Each player signs up with their .edu email and selects their primary title.</p>
+      </div>
+      <div class="step animate-in delay-2">
+        <div class="step-num">03</div>
+        <h3>Compete & Climb</h3>
+        <p>Play scheduled matches, submit results through the portal, and watch your school climb the conference standings.</p>
+      </div>
+      <div class="step animate-in delay-3">
+        <div class="step-num">04</div>
+        <h3>Win Championships</h3>
+        <p>Top schools from each conference advance to the season championship. Prove your campus is the best in the nation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <span class="section-label" style="display:block;margin-bottom:0.75rem">Ready to compete?</span>
+      <h2>Bring Your Campus to the League</h2>
+      <p>Registration is free. All you need is a .edu email and a team of players ready to compete.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary">
+          Register Your School
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="games.html" class="btn-outline">View All Titles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-box">N</div>
+          <span>NCEO</span>
+        </div>
+        <p class="footer-tagline">The official collegiate esports organization connecting campuses across the nation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Titles</h4>
+        <ul>
+          <li><a href="games.html">Super Smash Bros</a></li>
+          <li><a href="games.html">Mario Kart</a></li>
+          <li><a href="games.html">Rocket League</a></li>
+          <li><a href="games.html">Fortnite</a></li>
+          <li><a href="games.html">Rainbow Six Siege</a></li>
+          <li><a href="games.html">Overwatch 2</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>League</h4>
+        <ul>
+          <li><a href="about.html">About NCEO</a></li>
+          <li><a href="games.html">Game Titles</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Portal</h4>
+        <ul>
+          <li><a href="#">Sign In</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Standings</a></li>
+          <li><a href="#">Match History</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <script>document.write(new Date().getFullYear())</script> National Collegiate Esports Organization. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Rules</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

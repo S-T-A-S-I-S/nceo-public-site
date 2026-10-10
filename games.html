@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Titles — NCEO</title>
+  <meta name="description" content="NCEO supports 6 competitive titles: Super Smash Bros, Mario Kart, Rocket League, Fortnite, Rainbow Six Siege, and Overwatch 2." />
+  <link rel="icon" href="nceo-logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .game-detail-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: transform 0.25s;
+    }
+    .game-detail-card:hover { transform: translateY(-4px); }
+    .game-detail-header {
+      padding: 2rem 2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .game-detail-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+    }
+    .game-detail-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .game-detail-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      border: 1px solid;
+      flex-shrink: 0;
+    }
+    .game-detail-title {
+      font-family: var(--font-orbitron);
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.2rem;
+    }
+    .game-detail-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .game-detail-body { padding: 0 2rem 2rem; }
+    .game-detail-body p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .game-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .game-spec {
+      background: var(--elevated);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+    }
+    .game-spec .spec-label {
+      font-family: var(--font-orbitron);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .game-spec .spec-val {
+      font-family: var(--font-orbitron);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .game-detail-footer {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--font-orbitron);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid;
+    }
+    .status-pill .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--win);
+      animation: pulse 2s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav class="nav" role="navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="nceo-logo.png" alt="NCEO" />
+        NCEO
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn-primary">Register School</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" role="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-primary">Register School</a>
+  </div>
+</nav>
+
+<!-- ─── Page Hero ─── -->
+<header class="page-hero">
+  <div class="container">
+    <span class="section-label animate-in">Supported Titles</span>
+    <h1 class="animate-in delay-1"><span>6 Games.</span> One League.</h1>
+    <p class="animate-in delay-2">Every title has its own conference standings, match schedule, and championship path. Find your game and start competing.</p>
+  </div>
+</header>
+
+<!-- ─── Game Detail Cards ─── -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem">
+
+      <!-- Super Smash Bros -->
+      <div class="game-detail-card animate-in">
+        <div class="game-detail-header" style="background:linear-gradient(135deg,rgba(168,85,247,0.12),transparent)">
+          <div class="game-detail-top">
+            <div class="game-detail-icon" style="background:rgba(168,85,247,0.15);border-color:rgba(168,85,247,0.4)"><img src="logos/ssbu.png" alt="Super Smash Bros" /></div>
+            <div>
+              <div class="game-detail-title" style="color:#A855F7">Super Smash Bros</div>
+              <div class="game-detail-sub">Fighting · Platform</div>
+            </div>
+          </div>
+        </div>
+        <div class="game-detail-body">
+          <p>The most celebrated fighting game on college campuses. Our Smash bracket uses Ultimate and runs double-elimination to give every player a second chance. Compete solo and climb through your conference's bracket.</p>
+          <div class="game-specs">
+            <div class="game-spec">
+              <div class="spec-label">Format</div>
+              <div class="spec-val" style="color:#A855F7">1v1</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Bracket Type</div>
+              <div class="spec-val" style="color:#A855F7">Double Elim</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Platform</div>
+              <div class="spec-val">Nintendo Switch</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Players / School</div>
+              <div class="spec-val">Up to 5</div>
+            </div>
+          </div>
+          <div class="game-detail-footer">
+            <span class="status-pill" style="color:#00FF88;border-color:rgba(0,255,136,0.3)">
+              <span class="dot"></span> Active · Season 3
+            </span>
+            <a href="contact.html" class="btn-primary" style="font-size:0.65rem;padding:0.5rem 1rem">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mario Kart -->
+      <div class="game-detail-card animate-in delay-1">
+        <div class="game-detail-header" style="background:linear-gradient(135deg,rgba(239,68,68,0.12),transparent)">
+          <div class="game-detail-top">
+            <div class="game-detail-icon" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.4)"><img src="logos/mk.png" alt="Mario Kart" /></div>
+            <div>
+              <div class="game-detail-title" style="color:#EF4444">Mario Kart</div>
+              <div class="game-detail-sub">Racing · Casual</div>
+            </div>
+          </div>
+        </div>
+        <div class="game-detail-body">
+          <p>One of the most accessible titles in our lineup. Head-to-head races across a best-of-3 course selection. Great for schools building their esports program from the ground up.</p>
+          <div class="game-specs">
+            <div class="game-spec">
+              <div class="spec-label">Format</div>
+              <div class="spec-val" style="color:#EF4444">1v1</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Scoring</div>
+              <div class="spec-val" style="color:#EF4444">Points-Based</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Platform</div>
+              <div class="spec-val">Nintendo Switch</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Players / School</div>
+              <div class="spec-val">Up to 4</div>
+            </div>
+          </div>
+          <div class="game-detail-footer">
+            <span class="status-pill" style="color:#00FF88;border-color:rgba(0,255,136,0.3)">
+              <span class="dot"></span> Active · Season 3
+            </span>
+            <a href="contact.html" class="btn-primary" style="font-size:0.65rem;padding:0.5rem 1rem">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rocket League -->
+      <div class="game-detail-card animate-in delay-2">
+        <div class="game-detail-header" style="background:linear-gradient(135deg,rgba(59,130,246,0.12),transparent)">
+          <div class="game-detail-top">
+            <div class="game-detail-icon" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.4)"><img src="logos/rl.png" alt="Rocket League" /></div>
+            <div>
+              <div class="game-detail-title" style="color:#3B82F6">Rocket League</div>
+              <div class="game-detail-sub">Sports · Team</div>
+            </div>
+          </div>
+        </div>
+        <div class="game-detail-body">
+          <p>Rocket League is one of the most-watched collegiate esports titles worldwide. Team-based vehicular soccer with high skill expression. Matches run in a best-of-3 series with 3-minute overtime rules.</p>
+          <div class="game-specs">
+            <div class="game-spec">
+              <div class="spec-label">Format</div>
+              <div class="spec-val" style="color:#3B82F6">3v3</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Match</div>
+              <div class="spec-val" style="color:#3B82F6">Best of 3</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Platform</div>
+              <div class="spec-val">PC / Console</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Roster Size</div>
+              <div class="spec-val">3 + 1 Sub</div>
+            </div>
+          </div>
+          <div class="game-detail-footer">
+            <span class="status-pill" style="color:#00FF88;border-color:rgba(0,255,136,0.3)">
+              <span class="dot"></span> Active · Season 3
+            </span>
+            <a href="contact.html" class="btn-primary" style="font-size:0.65rem;padding:0.5rem 1rem">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fortnite -->
+      <div class="game-detail-card animate-in">
+        <div class="game-detail-header" style="background:linear-gradient(135deg,rgba(20,184,166,0.12),transparent)">
+          <div class="game-detail-top">
+            <div class="game-detail-icon" style="background:rgba(20,184,166,0.15);border-color:rgba(20,184,166,0.4)"><img src="logos/fortnite.png" alt="Fortnite" /></div>
+            <div>
+              <div class="game-detail-title" style="color:#14B8A6">Fortnite</div>
+              <div class="game-detail-sub">Battle Royale</div>
+            </div>
+          </div>
+        </div>
+        <div class="game-detail-body">
+          <p>Solo and duo competitive Fortnite with structured tournament scoring. High-paced, skill-intensive gameplay that rewards both building mechanics and gunfighting ability.</p>
+          <div class="game-specs">
+            <div class="game-spec">
+              <div class="spec-label">Format</div>
+              <div class="spec-val" style="color:#14B8A6">Solo / Duos</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Scoring</div>
+              <div class="spec-val" style="color:#14B8A6">Placement + Elims</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Platform</div>
+              <div class="spec-val">PC / Console</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Players / School</div>
+              <div class="spec-val">Up to 4</div>
+            </div>
+          </div>
+          <div class="game-detail-footer">
+            <span class="status-pill" style="color:#00FF88;border-color:rgba(0,255,136,0.3)">
+              <span class="dot"></span> Active · Season 3
+            </span>
+            <a href="contact.html" class="btn-primary" style="font-size:0.65rem;padding:0.5rem 1rem">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rainbow Six Siege -->
+      <div class="game-detail-card animate-in delay-1">
+        <div class="game-detail-header" style="background:linear-gradient(135deg,rgba(220,38,38,0.12),transparent)">
+          <div class="game-detail-top">
+            <div class="game-detail-icon" style="background:rgba(220,38,38,0.15);border-color:rgba(220,38,38,0.4)"><img src="logos/r6.png" alt="Rainbow Six Siege" /></div>
+            <div>
+              <div class="game-detail-title" style="color:#DC2626">Rainbow Six Siege</div>
+              <div class="game-detail-sub">Tactical FPS · Team</div>
+            </div>
+          </div>
+        </div>
+        <div class="game-detail-body">
+          <p>Siege is the most strategically deep game in our lineup. Destructible environments, operator abilities, and tight communication define play at the top level. A 5v5 team title with a structured attack/defend format.</p>
+          <div class="game-specs">
+            <div class="game-spec">
+              <div class="spec-label">Format</div>
+              <div class="spec-val" style="color:#DC2626">5v5</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Match</div>
+              <div class="spec-val" style="color:#DC2626">Best of 3</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Platform</div>
+              <div class="spec-val">PC</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Roster Size</div>
+              <div class="spec-val">5 + 2 Subs</div>
+            </div>
+          </div>
+          <div class="game-detail-footer">
+            <span class="status-pill" style="color:#00FF88;border-color:rgba(0,255,136,0.3)">
+              <span class="dot"></span> Active · Season 3
+            </span>
+            <a href="contact.html" class="btn-primary" style="font-size:0.65rem;padding:0.5rem 1rem">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overwatch 2 -->
+      <div class="game-detail-card animate-in delay-2">
+        <div class="game-detail-header" style="background:linear-gradient(135deg,rgba(249,115,22,0.12),transparent)">
+          <div class="game-detail-top">
+            <div class="game-detail-icon" style="background:rgba(249,115,22,0.15);border-color:rgba(249,115,22,0.4)"><img src="logos/ow2.png" alt="Overwatch 2" /></div>
+            <div>
+              <div class="game-detail-title" style="color:#F97316">Overwatch 2</div>
+              <div class="game-detail-sub">Hero Shooter · Team</div>
+            </div>
+          </div>
+        </div>
+        <div class="game-detail-body">
+          <p>Overwatch 2 combines quick hero-shooter mechanics with deep team composition strategy. Role selection, counter-picking, and ultimate timing define matches at the competitive collegiate level.</p>
+          <div class="game-specs">
+            <div class="game-spec">
+              <div class="spec-label">Format</div>
+              <div class="spec-val" style="color:#F97316">5v5</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Match</div>
+              <div class="spec-val" style="color:#F97316">Best of 3</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Platform</div>
+              <div class="spec-val">PC / Console</div>
+            </div>
+            <div class="game-spec">
+              <div class="spec-label">Roster Size</div>
+              <div class="spec-val">5 + 2 Subs</div>
+            </div>
+          </div>
+          <div class="game-detail-footer">
+            <span class="status-pill" style="color:#00FF88;border-color:rgba(0,255,136,0.3)">
+              <span class="dot"></span> Active · Season 3
+            </span>
+            <a href="contact.html" class="btn-primary" style="font-size:0.65rem;padding:0.5rem 1rem">Register</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Rules note ─── -->
+<section class="section-sm" style="background:rgba(13,26,48,0.4);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="cta-banner">
+      <span class="section-label" style="display:block;margin-bottom:0.75rem">Compete with confidence</span>
+      <h2>Rules & Match Procedures</h2>
+      <p>All titles follow NCEO standardized match rules. Players submit results through the portal with screenshot verification. Full rulebooks available upon school registration.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary">Register to Compete</a>
+        <a href="contact.html" class="btn-outline">Request Rulebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-box">N</div>
+          <span>NCEO</span>
+        </div>
+        <p class="footer-tagline">The official collegiate esports organization connecting campuses across the nation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Titles</h4>
+        <ul>
+          <li><a href="games.html">Super Smash Bros</a></li>
+          <li><a href="games.html">Mario Kart</a></li>
+          <li><a href="games.html">Rocket League</a></li>
+          <li><a href="games.html">Fortnite</a></li>
+          <li><a href="games.html">Rainbow Six Siege</a></li>
+          <li><a href="games.html">Overwatch 2</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>League</h4>
+        <ul>
+          <li><a href="about.html">About NCEO</a></li>
+          <li><a href="games.html">Game Titles</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Portal</h4>
+        <ul>
+          <li><a href="#">Sign In</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Standings</a></li>
+          <li><a href="#">Match History</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <script>document.write(new Date().getFullYear())</script> National Collegiate Esports Organization. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Rules</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
